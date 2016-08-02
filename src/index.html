@@ -27,6 +27,12 @@
     <div ng-include="'app/components/navbar/navbar.html'"></div>
     <div ui-view></div>
 
+    <!--SDK VK-->
+    <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      VK.init({apiId: '5571590'});
+    </script>
+
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
