@@ -11,7 +11,7 @@
 
   /** @ngInject */
 
-  function $vk($rootScope, $timeout, $q, $state, $const) {
+  function $vk($timeout, $q) {
 
     return {
       login: function(){
