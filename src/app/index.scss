@@ -4,7 +4,6 @@
  */
 // bower:scss
 // endbower
-
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
 
 @font-face {
@@ -13,17 +12,17 @@
   font-weight: 400;
   src: url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff) format('woff'),
-       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+  local('MaterialIcons-Regular'),
+  url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+  url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff) format('woff'),
+  url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 24px; /* Preferred icon size */
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -48,6 +47,10 @@ html {
   font-family: 'Roboto Slab', serif;
 }
 
+html, body, md-content {
+  background-color: #f5f5f5 !important;
+}
+
 [layout=row] {
   flex-direction: row;
 }
@@ -59,35 +62,34 @@ html {
   padding: 0.2em 0;
 }
 
-md-toolbar.md-default-theme {
-  background-color: black;
+.width {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-section.jumbotron {
-  margin-bottom: 30px;
-  padding: 1px 30px;
-  background-color: #5aadbb;
-  text-align: center;
-
-  color: white;
-
-  h1 {
-    font-size: 3em;
-  }
+table{
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
 }
+tr{
+  transition-duration: .3s;
+  outline: none;
+}
+tr:hover{
+  background: #EEEEEE;
+  cursor: pointer;
+}
+td{
+  padding: 20px 2%;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+td:hover{
+  padding: 20px 2%;
+  border-bottom: 1px solid rgba(0,0,0,.12);
 
-.techs {
-  display: flex;
-  flex-flow: row wrap;
-
-  md-card {
-    width: 30%;
-
-    img.pull-right {
-      float: right;
-      width: 100px;
-    }
-  }
 }
 
 /**

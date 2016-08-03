@@ -24,6 +24,8 @@
             session: null
           },
           isAuth: function () {
+
+            // todo перевисать isAuth более красиво
             var _this = this;
             var dfd = $q.defer();
 

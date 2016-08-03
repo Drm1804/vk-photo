@@ -10,6 +10,7 @@
     var vm = this;
 
     vm.isUser = true;
+    vm.user = null;
     vm.showProgress = false;
 
     vm.toggleMenu = toggleMenu;
@@ -49,8 +50,9 @@
 
       });
 
-      $rootScope.$on('user:login', function () {
+      $rootScope.$on('user:login', function (ev, data) {
         vm.isUser = true;
+        vm.user = data;
       });
 
       $user.isAuth()

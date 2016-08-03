@@ -1,20 +1,23 @@
 <div ng-controller="NavbarController as ctrl">
   <md-progress-linear md-mode="indeterminate" value="30" ng-show="ctrl.showProgress"></md-progress-linear>
   <div class="navbar">
-    <div layout="row">
-      <div flex="5">
-        <md-button class="md-fab md-mini md-raised" style="text-transform: none;" ng-click="ctrl.toggleMenu('menu')">
-          <md-icon md-svg-src="img/icons/menu.svg" class="s24" aria-label="Cake"></md-icon>
-        </md-button>
-      </div>
-      <div flex="85">
-        <h3>Привет, {{::ctrl.userName|| 'путник'}}</h3>
-      </div>
-      <div flex="10">
-        <md-button class="md-raised" style="text-transform: none;" ng-show="!ctrl.isUser" ng-click="ctrl.login()">Войти</md-button>
-        <md-button class="md-raised" style="text-transform: none;" ng-show="ctrl.isUser" ng-click="ctrl.logout()">Выйти</md-button>
+    <div class="width">
+      <div layout="row">
+        <div flex="5">
+          <md-button class="md-fab md-mini md-raised" style="text-transform: none;" ng-click="ctrl.toggleMenu('menu')">
+            <md-icon md-svg-src="img/icons/menu.svg" class="s24" aria-label="Cake"></md-icon>
+          </md-button>
+        </div>
+        <div flex="85">
+          <h3 class="navbar-header">Привет, {{::ctrl.userName|| 'путник'}}</h3>
+        </div>
+        <div flex="10">
+          <md-button class="md-raised" style="text-transform: none;" ng-show="!ctrl.isUser" ng-click="ctrl.login()">Войти</md-button>
+          <md-button class="md-raised" style="text-transform: none;" ng-show="ctrl.isUser" ng-click="ctrl.logout()">Выйти</md-button>
+        </div>
       </div>
     </div>
+
   </div>
 
 

@@ -1,3 +1,9 @@
-<div ng-controller="ListPhotoController as ctrl">
-  <h1>List</h1>
+<div class="width" ng-controller="ListPhotoController as ctrl">
+  <h1 class="list-header">Список альбомов:</h1>
+  <table>
+    <tr ng-repeat="item in ctrl.albumList track by $index" ng-click="ctrl.goInAlbum(item.aid)">
+      <td>{{::item.title}}</td>
+      <td>{{::item.size}}</td>
+    </tr>
+  </table>
 </div>

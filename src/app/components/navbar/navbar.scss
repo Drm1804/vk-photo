@@ -1,5 +1,12 @@
 .navbar {
-  min-height: 30px;
+  min-height: 54px;
+  padding: 5px 0;
   background: #5aadbb;
   box-shadow: 0 0 5px #000;
+}
+.navbar-header{
+  line-height: 1rem;
+  margin: 0;
+  padding: 19px;
+  font-weight: 300;
 }
