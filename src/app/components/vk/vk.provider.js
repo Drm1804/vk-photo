@@ -11,7 +11,7 @@
 
   /** @ngInject */
 
-  function $vk($timeout, $q) {
+  function $vk($timeout, $q, $http) {
 
     return {
       login: function(){
@@ -59,10 +59,62 @@
           });
         });
         return dfd.promise;
+      },
+      getPhotos: function(uid, aid){
+
+        var dfd = $q.defer();
+        $timeout(function(){
+
+          VK.Api.call('photos.get', {owner_id:uid, album_id: aid}, function(r){
+            if(r.response){
+              dfd.resolve(r.response)
+            } else {
+              dfd.reject(r)
+            }
+          });
+        });
+        return dfd.promise;
+      },
+      getPhotoUploadServer: function(aid){
+
+        var dfd = $q.defer();
+        $timeout(function(){
+
+          VK.Api.call('photos.getUploadServer', {album_id: aid}, function(r){
+            if(r.response){
+              dfd.resolve(r.response)
+            } else {
+              dfd.reject(r)
+            }
+          });
+        });
+        return dfd.promise;
+      },
+      photoUpload: function(urlServer, data){
+        var dfd = $q.defer();
+        $http.post(urlServer, data)
+          .then(function(resp){
+            dfd.resolve(resp);
+          }, function(resp){
+            dfd.reject(resp)
+          });
+        return dfd.promise;
+      },
+      photoSave: function(aid, server){
+
+        var dfd = $q.defer();
+        $timeout(function(){
+
+          VK.Api.call('photos.getUploadServer', {album_id: aid, server: server}, function(r){
+            if(r.response){
+              dfd.resolve(r.response)
+            } else {
+              dfd.reject(r)
+            }
+          });
+        });
+        return dfd.promise;
       }
-
-
-
     }
   }
 })();

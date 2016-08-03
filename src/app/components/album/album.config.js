@@ -5,8 +5,12 @@
     .config(config);
 
   /** @ngInject */
-  function config(){
-
+  function config($stateProvider){
+    $stateProvider
+      .state('auth.album', {
+        url: '/album?aid',
+        templateUrl: 'app/components/album/album.html'
+      })
   }
 
 })();

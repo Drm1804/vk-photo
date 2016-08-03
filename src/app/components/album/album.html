@@ -1,0 +1,24 @@
+<div class="width" ng-controller="AlbumController as ctrl">
+  <a class="album-back-link" ui-sref="auth.list">
+    <md-icon md-svg-src="img/icons/back.svg" class="s12" aria-label="Cake"></md-icon>
+    К альбомам</a>
+  <h1>{{::ctrl.aid}}</h1>
+  <md-button class="md-fab md-mini md-raised" style="text-transform: none;" ng-click="ctrl.toggleMenu('menu')">
+    <md-icon md-svg-src="img/icons/download.svg" class="s24" aria-label="Cake"></md-icon>
+  </md-button>
+
+
+
+
+  <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+    <md-whiteframe ng-repeat="item in ctrl.photoList track by $index" ng-click="ctrl.showBigImg($event, item)"
+                   class="md-whiteframe-4dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout
+                   layout-align="center center">
+      <img style="width: 100%;" ng-src="{{item.src}}" alt="">
+    </md-whiteframe>
+  </div>
+
+
+</div>
+
+

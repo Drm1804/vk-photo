@@ -6,7 +6,7 @@
 
   /** @ngInject */
 
-  function ListPhotoController($vk) {
+  function ListPhotoController($vk, $state) {
     var vm = this;
     vm.albumList = [];
     vm.goInAlbum = goInAlbum;
@@ -16,9 +16,7 @@
 
 
     function goInAlbum(id) {
-      // todo сделать переход в альбом, когда будет готов соответствующий стейт
-      console.log(id);
-      // $state.go();
+      $state.go('auth.album', {aid: id});
     }
 
     function getList() {
